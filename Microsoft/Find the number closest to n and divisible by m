@@ -1,0 +1,166 @@
+Given non-zero two integers N and M. The problem is to find the number closest to N and divisible by M. If there are more than one such number, then output the one having maximum absolute value.
+
+Example 1:
+
+Input:
+N = 13 , M = 4
+Output:
+12
+Explanation:
+12 is the Closest Number to
+13 which is divisible by 4.
+Example 2:
+
+Input:
+N = -15 , M = 6
+Output:
+-18
+Explanation:
+-12 and -18 are both similarly close to
+-15 and divisible by 6. but -18 has
+the maximum absolute value.
+So, Output is -18
+ 
+
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function closestNumber() which takes an Integer n as input and returns the answer.
+
+Expected Time Complexity: O(1)
+Expected Auxiliary Space: O(1)
+ 
+Constraints:
+-105 <= N <= 105
+
+*************************************************************************
+JAVA
+
+public class close_to_n_divisible_m {
+     
+    // function to find the number closest to n
+    // and divisible by m
+    static int closestNumber(int n, int m)
+    {
+        // find the quotient
+        int q = n / m;
+          
+        // 1st possible closest number
+        int n1 = m * q;
+          
+        // 2nd possible closest number
+        int n2 = (n * m) > 0 ? (m * (q + 1)) : (m * (q - 1));
+          
+        // if true, then n1 is the required closest number
+        if (Math.abs(n - n1) < Math.abs(n - n2))
+            return n1;
+          
+        // else n2 is the required closest number   
+        return n2;   
+    }
+      
+    // Driver program to test above
+    public static void main(String args[])
+    {
+        int n = 13, m = 4;
+        System.out.println(closestNumber(n, m));
+          
+        n = -15; m = 6;
+        System.out.println(closestNumber(n, m));
+          
+        n = 0; m = 8;
+        System.out.println(closestNumber(n, m));
+          
+        n = 18; m = -7;
+        System.out.println(closestNumber(n, m));
+    }
+}
+*************************************************************************************
+
+Python3
+
+# Function to find the number closest
+# to n and divisible by m
+def closestNumber(n, m) :
+    # Find the quotient
+    q = int(n / m)
+     
+    # 1st possible closest number
+    n1 = m * q
+     
+    # 2nd possible closest number
+    if((n * m) > 0) :
+        n2 = (m * (q + 1))
+    else :
+        n2 = (m * (q - 1))
+     
+    # if true, then n1 is the required closest number
+    if (abs(n - n1) < abs(n - n2)) :
+        return n1
+     
+    # else n2 is the required closest number
+    return n2
+     
+     
+# Driver program to test above
+n = 13; m = 4
+print(closestNumber(n, m))
+ 
+n = -15; m = 6
+print(closestNumber(n, m))
+ 
+n = 0; m = 8
+print(closestNumber(n, m))
+ 
+n = 18; m = -7
+print(closestNumber(n, m))
+
+********************************************************************************
+C++
+
+// C++ implementation to find the number closest to n
+// and divisible by m
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+// function to find the number closest to n
+// and divisible by m
+int closestNumber(int n, int m)
+{
+    // find the quotient
+    int q = n / m;
+     
+    // 1st possible closest number
+    int n1 = m * q;
+     
+    // 2nd possible closest number
+    int n2 = (n * m) > 0 ? (m * (q + 1)) : (m * (q - 1));
+     
+    // if true, then n1 is the required closest number
+    if (abs(n - n1) < abs(n - n2))
+        return n1;
+     
+    // else n2 is the required closest number   
+    return n2;   
+}
+ 
+// Driver program to test above
+int main()
+{
+    int n = 13, m = 4;
+    cout << closestNumber(n, m) << endl;
+     
+    n = -15; m = 6;
+    cout << closestNumber(n, m) << endl;
+     
+    n = 0; m = 8;
+    cout << closestNumber(n, m) << endl;
+     
+    n = 18; m = -7;
+    cout << closestNumber(n, m) << endl;
+     
+    return 0;
+}
+
+*******************************************************************************
+
