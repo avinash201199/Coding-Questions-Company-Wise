@@ -22,10 +22,6 @@ Explanation:
 the maximum absolute value.
 So, Output is -18
  
-
-Your Task:
-You don't need to read input or print anything. Your task is to complete the function closestNumber() which takes an Integer n as input and returns the answer.
-
 Expected Time Complexity: O(1)
 Expected Auxiliary Space: O(1)
  
